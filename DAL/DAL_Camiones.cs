@@ -11,7 +11,7 @@ namespace DAL
     public class DAL_Camiones
     {
         //Create
-        public static string accion_Camion(Camiones_VO camion)
+        public static string insert_Camion(Camiones_VO camion)
         {
             string salida = "";
             int respuesta = 0;
