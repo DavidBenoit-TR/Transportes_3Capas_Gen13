@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Transportes_3Capas_Gen13.Utilidades;
 using VO;
 
 namespace Transportes_3Capas_Gen13.Catalogos.Camiones
@@ -144,7 +145,18 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
                     salida = BLL_Camiones.actualizar_Camion(_camion_aux);
                 }
                 //preparamos la salida para cachar un error y mostra el Sweeet Alert
-                if (salida.ToUpper().Contains("ERROR")) { } else { }
+                if (salida.ToUpper().Contains("ERROR"))
+                {
+                    titulo = "Ops...";
+                    respuesta = salida;
+                    tipo = "warning";
+                }
+                else
+                {
+                    titulo = "Correcto!";
+                    respuesta = salida;
+                    tipo = "success";
+                }
             }
             catch (Exception ex)
             {
@@ -153,6 +165,7 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
                 tipo = "error";
             }
             //sweet alert
+            sweetAlert.Sweet_Alert(titulo, respuesta, tipo, this.Page, this.GetType(), "/catalogos/camiones/listado_camiones.aspx");
         }
     }
 }
