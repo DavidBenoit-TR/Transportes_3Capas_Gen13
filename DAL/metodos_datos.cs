@@ -48,7 +48,7 @@ namespace DAL
                     else
                     {
                         //asignamos los parámetros al comando
-                        for (int i = 0; i < parametros.Length; i++)
+                        for (int i = 0; i < parametros.Length; i = i + 2)
                         {
                             //SqlParameter => Objeto de ADO
                             cmd.Parameters.AddWithValue(parametros[i].ToString(), parametros[i + 1].ToString());
@@ -122,7 +122,7 @@ namespace DAL
                     else
                     {
                         //asignamos los parámetros al comando
-                        for (int i = 0; i < parametros.Length; i++)
+                        for (int i = 0; i < parametros.Length; i = i + 2)
                         {
                             //SqlParameter => Objeto de ADO
                             cmd.Parameters.AddWithValue(parametros[i].ToString(), parametros[i + 1].ToString());
@@ -195,7 +195,7 @@ namespace DAL
                     else
                     {
                         //asignamos los parámetros al comando
-                        for (int i = 0; i < parametros.Length; i++)
+                        for (int i = 0; i < parametros.Length; i = i + 2)
                         {
                             //SqlParameter => Objeto de ADO
                             cmd.Parameters.AddWithValue(parametros[i].ToString(), parametros[i + 1].ToString());

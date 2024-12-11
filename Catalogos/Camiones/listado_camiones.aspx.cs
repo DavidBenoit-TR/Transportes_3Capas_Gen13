@@ -29,7 +29,7 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
 
         protected void Insertar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("formulariocamiones.aspx");
         }
 
         protected void GVCamiones_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -39,7 +39,16 @@ namespace Transportes_3Capas_Gen13.Catalogos.Camiones
 
         protected void GVCamiones_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            //defino si el comando (el click que se detecta) tiene la propiedad "Select"
+            if (e.CommandName == "Select")
+            {
+                //recupero el índice en función de aqule elemnto que haya detonado el evento
+                int varIndex = int.Parse(e.CommandArgument.ToString());
+                //recupero el ID en función del índice que recuperamos anterormente
+                string id = GVCamiones.DataKeys[varIndex].Values["ID_Camion"].ToString();
+                //redirecciono al formulario de edición pasando como parámetro el ID
+                Response.Redirect($"formulariocamiones.aspx?Id={id}");
+            }
         }
 
         protected void GVCamiones_RowEditing(object sender, GridViewEditEventArgs e)
