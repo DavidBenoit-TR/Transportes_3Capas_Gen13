@@ -21,6 +21,21 @@ namespace BLL
             return DAL_Camiones.Get_Camiones(parametros);
         }
 
+        public static List<Camiones_VO> Get_Camiones_x_Disponibilidad()
+        {
+            List<Camiones_VO> lista_vacia = new List<Camiones_VO>();
+            List<Camiones_VO> lista_origen = DAL_Camiones.Get_Camiones();
+
+            foreach (var c in lista_origen)
+            {
+                if (c.Disponibilidad)
+                {
+                    lista_vacia.Add(c);
+                }
+            }
+            return lista_vacia;
+        }
+
         //Update
         public static string actualizar_Camion(Camiones_VO camion)
         {

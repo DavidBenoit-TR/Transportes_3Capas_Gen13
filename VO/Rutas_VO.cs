@@ -39,7 +39,7 @@ namespace VO
             _Distancia = 0;
             _Fecha_salida = "";
             _Fecha_llegadaestimada = "";
-            _Fecha_llegadareal = "";
+            _Fecha_llegadareal = string.Empty;
 
         }
 
@@ -50,7 +50,7 @@ namespace VO
             _Chofer_ID = int.Parse(dr["Chofer_ID"].ToString());
             _Direccionorigen_ID = int.Parse(dr["Direccionorigen_ID"].ToString());
             _Direcciondestino_ID = int.Parse(dr["Direcciondestino_ID"].ToString());
-            _Distancia = int.Parse(dr["Distancia"].ToString());
+            _Distancia = double.Parse(dr["Distancia"].ToString());
             _Fecha_salida = DateTime.Parse(dr["Fecha_salida"].ToString()).ToShortDateString();
             _Fecha_llegadaestimada = DateTime.Parse(dr["Fecha_llegadaestimada"].ToString()).ToShortDateString();
             _Fecha_llegadareal = DateTime.Parse(dr["Fecha_llegadareal"].ToString()).ToShortDateString();

@@ -74,7 +74,7 @@ namespace DAL
             int respuesta = 0;
             try
             {
-                respuesta = metodos_datos.execute_nonQuery("sp_ActualizarCamion",
+                respuesta = metodos_datos.execute_nonQuery("sp_ActualizarRuta",
                     "@Camion_ID", ruta.Camion_ID,
                     "@Chofer_ID", ruta.Chofer_ID,
                     "@Distancia", ruta.Distancia,
